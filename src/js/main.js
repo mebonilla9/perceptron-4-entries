@@ -1,8 +1,7 @@
 import '../css/style.css'
-import * as bootstrap from 'bootstrap'
 
 document.querySelector('#app').innerHTML = `
-  <h1 class="text-center">PERCEPTRON SIMPLE</h1>
+  <h1 class="text-center">Perceptron de cuatro entradas</h1>
   <br>
   <div class="container">
     <div class="container-input">
@@ -185,7 +184,10 @@ const selectValue3=document.getElementById("valueV3")
 const selectValue4=document.getElementById("valueV4")
 
 function operation(index) {
-    let sumproduct = (weight[0] * trueTable[0][index]) + (weight[1] * trueTable[1][index]) + (weight[2] * trueTable[2][index]) + (weight[3] * trueTable[3][index])
+    let sumproduct = (weight[0] * trueTable[0][index])
+    + (weight[1] * trueTable[1][index])
+    + (weight[2] * trueTable[2][index])
+    + (weight[3] * trueTable[3][index])
     let y = Math.tanh(sumproduct) - ERROR
     if (y >= 0) {
         y = 1
@@ -196,7 +198,10 @@ function operation(index) {
 }
 
 function operationTest(val1, val2, val3, val4) {
-    let sumproduct = (weight[0] * val1) + (weight[1] * val2) + (weight[2] * val3) + (weight[3] * val4)
+    let sumproduct = (weight[0] * val1)
+    + (weight[1] * val2)
+    + (weight[2] * val3)
+    + (weight[3] * val4)
     let y = Math.tanh(sumproduct) - ERROR
     console.log('pesos: ',weight)
     console.log('Error: ',ERROR)
